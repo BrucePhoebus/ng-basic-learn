@@ -1,0 +1,13 @@
+.header {
+    height: 80px;
+    line-height: 80px;
+    background-color: aliceblue;
+}
+
+.header .header-logo {
+    font-family: fantasy;
+    font-size: 44px;
+    text-decoration: none;
+    color: red;
+    margin: 0 10px;
+}

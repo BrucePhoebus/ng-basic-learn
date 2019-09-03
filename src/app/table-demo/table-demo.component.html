@@ -1,0 +1,29 @@
+<!--
+ * @Description: 
+ * @Date: 2019-08-20 10:38:05
+ * @LastEditors: phoebus
+ * @LastEditTime: 2019-08-20 10:38:05
+ -->
+<div class="table-demo">
+    <table *ngIf="students">
+        <tr *ngFor="let student of students; index as i;">
+            <td>{{ student.Name }}</td>
+            <td>{{ student.Country }}</td>
+        </tr>
+    </table>
+</div>
+<hr>
+<h2>计算总价练习</h2>
+<div class="form-table">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.form.valid)" novalidate>
+        <div><label><span class="error">* </span>用户：<input type="text" name="name" [(ngModel)]="name" required></label>
+            <p *ngIf="userForm.controls['name']?.invalid" class="error">用户名必填</p></div>
+        <div><label><span class="error">* </span>电话：<input type="text" name="tel" [(ngModel)]="tel" pattern="1[3|5|8]\d{9}" required></label></div>
+        <div><label><span class="error">* </span>性别：<select [(ngModel)]="sex" name="sex" required>
+            <option value="man">男</option>
+            <option value="female">女</option>
+        </select></label>
+            <p *ngIf="userForm.controls['sex']?.errors?.required"></p></div>
+        <button type="submit" [disabled]="!userForm.form.valid">发布</button>
+    </form>
+</div>

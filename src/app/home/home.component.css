@@ -1,0 +1,14 @@
+.home-btn {
+  width: 100px;
+  padding: 10px;
+  background-color: #7a7a9c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 10px;
+}
+
+.home-btn:hover {
+  cursor: pointer;
+  background-color: #7A7AD3;
+}
