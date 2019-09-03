@@ -1,27 +1,47 @@
-# NgBasicLearn
+# 项目说明
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+	该项目是AngularJS入门的一些demo练习
 
-## Development server
+## 安装依赖
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+``` bash
+npm install
+```
 
-## Code scaffolding
+## 如何运行
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+``` bash
+npm run start
+# 或者
+ng serve --open
+```
 
-## Build
+## 如何打包
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+``` bash
+npm run build
+```
 
-## Running unit tests
+## 如何部署
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### 最简单的部署
 
-## Running end-to-end tests
+``` bash
+ng build --prod
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* 直接编译打包后，将dist打包文件复制到服务器某路径下(记得重命名)
 
-## Further help
+* 然后配置服务器，将某个文件路径映射到项目打包的`index.html`文件
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### 免费的github page部署
+
+``` bash
+ng build --prod --output-path docs --base-href
+```
+
+* 打包后项目根目录会出现一个`docs`打包文件，推送到github上
+
+* 在github上设置github page的source路径，选择`master branch/docs folder`
+
+* 之后页面刷新会出现项目`github page`外网访问地址，访问就能看到项目首页了
