@@ -1,10 +1,7 @@
-<!--
- * @Description: 
- * @Date: 2019-08-20 10:38:05
- * @LastEditors: phoebus
- * @LastEditTime: 2019-08-20 10:38:05
- -->
+<h1>表格练习</h1>
+
 <div class="table-demo">
+	<h2>简单表格列表</h2>
     <table *ngIf="students">
         <tr *ngFor="let student of students; index as i;">
             <td>{{ student.Name }}</td>
@@ -13,11 +10,12 @@
     </table>
 </div>
 <hr>
-<h2>计算总价练习</h2>
+
 <div class="form-table">
+	<h2>计算总价练习</h2>
     <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.form.valid)" novalidate>
         <div><label><span class="error">* </span>用户：<input type="text" name="name" [(ngModel)]="name" required></label>
-            <p *ngIf="userForm.controls['name']?.invalid" class="error">用户名必填</p></div>
+            <span *ngIf="userForm.controls['name']?.invalid" class="error">用户名必填</span></div>
         <div><label><span class="error">* </span>电话：<input type="text" name="tel" [(ngModel)]="tel" pattern="1[3|5|8]\d{9}" required></label></div>
         <div><label><span class="error">* </span>性别：<select [(ngModel)]="sex" name="sex" required>
             <option value="man">男</option>
@@ -26,4 +24,21 @@
             <p *ngIf="userForm.controls['sex']?.errors?.required"></p></div>
         <button type="submit" [disabled]="!userForm.form.valid">发布</button>
     </form>
+</div>
+<hr>
+
+<div>
+	<!--使用了ng-class、ng-style来进行定义样式-->
+	<!--使用了ng-mouseover、ng-mouseleave来绑定事件-->
+	<div class="mouseOverLeave" (mouseover)="over()" (mouseleave)="leave()"
+		[ngStyle]="overStyle"></div>
+	<ul *ngIf="lis.length > 0" >
+		<!--使用了ng-repeat来进行遍历，创造li元素标签-->
+		<!-- <li ng-repeat="lim in lis" ng-class="{evenB:$odd, oddB:$even}">
+			{{ lim.name }}----{{ lim.age }}
+		</li> -->
+		<li *ngFor="let lim of lis" [ngClass]="{evenB:$odd, oddB:$even}">
+			{{ lim.name }}----{{ lim.age }}
+		</li>
+	</ul>
 </div>

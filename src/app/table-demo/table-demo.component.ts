@@ -1,47 +1,65 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-table-demo',
-    templateUrl: './table-demo.component.html',
-    styleUrls: ['./table-demo.component.css']
+	selector: 'app-table-demo',
+	templateUrl: './table-demo.component.html',
+	styleUrls: ['./table-demo.component.css']
 })
 export class TableDemoComponent implements OnInit {
 
-    students = [
-        {
-            'Name': 'Alfreds Futterkiste',
-            'Country': 'Germany'
-        },
-        {
-            'Name': 'Berglunds snabbköp',
-            'Country': 'Sweden'
-        },
-        {
-            'Name': 'Centro comercial Moctezuma',
-            'Country': 'Mexico'
-        },
-        {
-            'Name': 'Ernst Handel',
-            'Country': 'Austria'
-        }
-    ];
+	students = [
+		{
+			'Name': 'Alfreds Futterkiste',
+			'Country': 'Germany'
+		},
+		{
+			'Name': 'Berglunds snabbköp',
+			'Country': 'Sweden'
+		},
+		{
+			'Name': 'Centro comercial Moctezuma',
+			'Country': 'Mexico'
+		},
+		{
+			'Name': 'Ernst Handel',
+			'Country': 'Austria'
+		}
+	];
 
-    name: string;
+	lis = [
+		{ name: 'Tom', age: 12 },
+		{ name: 'Tom2', age: 13 },
+		{ name: 'Tom3', age: 14 },
+		{ name: 'Tom4', age: 15 },
+		{ name: 'Tom5', age: 16 }
+	];
 
-    tel: number;
+	name: string;
 
-    sex: string;
+	tel: number;
+
+	sex: string;
+
+	overStyle: object;
 
 
-    constructor() {
-        this.sex = '男';
-    }
+	constructor() {
+		this.sex = '男';
+	}
 
-    ngOnInit() {
-    }
+	ngOnInit() {
+	}
 
-    onSubmit(valid: boolean) {
+	onSubmit(valid: boolean) {
 
-    }
+	}
+
+	leave() {
+		this.overStyle = { 'background-color': 'green' };
+	}
+
+	over() {
+		this.overStyle = { 'background-color': 'blue' };
+	}
 
 }

@@ -1,0 +1,10 @@
+<div class="memo-exercise">
+	<h2>我的备忘录</h2>
+	<input type="text" [(ngModel)]="newMemo">
+	<button (click)="add()">新增</button>
+	<div *ngFor="let memo of memoList" >
+		<input type="checkbox" id="rdo" [(ngModel)]="memo.isChecked" />
+		<label for="rdo">{{ memo.name }}</label>
+	</div>
+	<button (click)="delete()">删除选中</button>
+</div>

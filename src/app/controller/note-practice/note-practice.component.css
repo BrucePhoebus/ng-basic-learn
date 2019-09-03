@@ -1,0 +1,27 @@
+.note-practice {
+	text-align: center;
+}
+
+.note-practice textarea {
+	resize: none;
+}
+
+.note-practice .word-tip {
+	margin-left: 250px;
+	color: gray;
+}
+
+.note-btn {
+	width: 100px;
+	padding: 10px;
+	background-color: #7a7a9c;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	margin: 5px 10px 5px 0;
+}
+
+.note-btn:hover {
+	cursor: pointer;
+	background-color: #7A7AD3;
+}

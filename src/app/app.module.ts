@@ -8,30 +8,36 @@ import { TableDemoComponent } from './table-demo/table-demo.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { NotePracticeComponent } from './controller/note-practice/note-practice.component';
+import { MemoExerciseComponent } from './controller/memo-exercise/memo-exercise.component';
 
 const appRouters: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'table', component: TableDemoComponent },
-  { path: 'toWayBind', component: TowWayBindComponent },
+	{ path: '', component: HomeComponent },
+	{ path: 'table', component: TableDemoComponent },
+	{ path: 'toWayBind', component: TowWayBindComponent },
+	{ path: 'note', component: NotePracticeComponent },
+	{ path: 'memo', component: MemoExerciseComponent },
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TowWayBindComponent,
-    TableDemoComponent,
-    HomeComponent,
-    HeaderComponent
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(
-        appRouters,
-        {enableTracing: false}
-    ),
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		TowWayBindComponent,
+		TableDemoComponent,
+		HomeComponent,
+		HeaderComponent,
+		NotePracticeComponent,
+		MemoExerciseComponent
+	],
+	imports: [
+		BrowserModule,
+		RouterModule.forRoot(
+			appRouters,
+			{ enableTracing: false }
+		),
+		FormsModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
