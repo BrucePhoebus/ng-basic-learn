@@ -10,6 +10,11 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { NotePracticeComponent } from './controller/note-practice/note-practice.component';
 import { MemoExerciseComponent } from './controller/memo-exercise/memo-exercise.component';
+import { FilterComponent } from './controller/filter/filter.component';
+import { SortPipe } from './pipe/sort.pipe';
+import { SexFormatPipe } from './pipe/sex-format.pipe';
+import { SelectFilterPipe } from './pipe/select-filter.pipe';
+import { ExpandDataPipe } from './pipe/expand-data.pipe';
 
 const appRouters: Routes = [
 	{ path: '', component: HomeComponent },
@@ -17,6 +22,7 @@ const appRouters: Routes = [
 	{ path: 'toWayBind', component: TowWayBindComponent },
 	{ path: 'note', component: NotePracticeComponent },
 	{ path: 'memo', component: MemoExerciseComponent },
+	{ path: 'filter', component: FilterComponent },
 ];
 
 @NgModule({
@@ -27,7 +33,12 @@ const appRouters: Routes = [
 		HomeComponent,
 		HeaderComponent,
 		NotePracticeComponent,
-		MemoExerciseComponent
+		MemoExerciseComponent,
+		FilterComponent,
+		SortPipe,
+		SexFormatPipe,
+		SelectFilterPipe,
+		ExpandDataPipe
 	],
 	imports: [
 		BrowserModule,

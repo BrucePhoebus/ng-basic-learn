@@ -1,0 +1,45 @@
+<div class="filter-test">
+    <!--  链式管道  -->
+    <div class="chain-pipe">
+        date:{{currentDate}}
+        <ul>
+            <li>
+                使用date管道：{{ currentDate|date }}
+            </li>
+            <li>
+                使用参数化的date: {{ currentDate | date:'shortDate' }}
+            </li>
+            <li>
+                使用链式管道date、lowercase：{{currentDate|date|lowercase}}
+            </li>
+        </ul>
+    </div>
+    <hr><br>
+    <div class="filter-sort">
+        <select [(ngModel)]="sortType">
+            <option *ngFor="let type of sortTypeList" [value]="type['key']">{{type['value']}}</option>
+        </select>
+    </div>
+    <hr><br>
+    <div class="filter-sex">
+        <select [(ngModel)]="sex">
+            <option value="male">男</option>
+            <option value="female">女</option>
+        </select>
+        {{ sex }} --> {{sex | sexFormat}}
+    </div>
+    <div>
+        {{items | sort : sortType | json}}
+    </div>
+    <hr><br>
+    <div class="random-filter">
+        {{counts | json}}
+        <ul>
+            <li *ngFor="let count of counts | expandData">
+                {{count.value}}
+            </li>
+        </ul>
+        <button nz-button (click)="randomChange()">随机改变其中一个数据</button>
+    </div>
+
+</div>
